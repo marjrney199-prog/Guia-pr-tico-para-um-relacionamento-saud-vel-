@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141a2e">
+<title>Porque Ela Se Afasta? | Diagnóstico Emocional Gratuito</title>
+<meta name="description" content="Descobre em apenas 2 minutos se estás a cometer erros que afastam mulheres sem perceber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #141a2e;
+    --card: #1b2238;
+    --secondary: #232b44;
+    --fg: #f7f8fa;
+    --muted: #bfc3cc;
+    --gold: #e0b45a;
+    --border: rgba(255,255,255,.1);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  .container { width: 100%; max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 672px; }
+  section { padding: 96px 0; }
+  .alt { background: rgba(27,34,56,.4); }
+  .bt { border-top: 1px solid var(--border); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .3em; color: var(--gold); margin-bottom: 16px; }
+  .serif { font-family: var(--serif); font-weight: 600; }
+  .gold { color: var(--gold); }
+  .italic { font-style: italic; }
+  .muted { color: var(--muted); }
+  .center { text-align: center; }
+  h2.title { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; text-wrap: balance; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin: 16px auto 0; }
+  svg.i { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--gold); color: var(--bg); font-weight: 600; letter-spacing: .03em; padding: 16px 32px; border-radius: 999px; border: 0; cursor: pointer; font-size: 16px; font-family: inherit; box-shadow: 0 10px 40px -10px rgba(224,180,90,.6); transition: transform .3s, filter .3s; }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+  .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+  .btn.xl { padding: 24px 40px; font-size: 19px; }
+  .btn.full { width: 100%; }
+
+  /* Hero */
+  .hero { position: relative; isolation: isolate; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; z-index: -2; }
+  .hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, var(--bg), rgba(20,26,46,.8), rgba(20,26,46,.3)); }
+  .hero .container { padding-top: 128px; padding-bottom: 64px; }
+  .hero-content { max-width: 672px; animation: up 1s ease both; }
+  .hero .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+  .hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(38px, 8vw, 72px); line-height: 1.05; text-wrap: balance; }
+  .hero p.sub { margin-top: 24px; font-size: clamp(18px, 2.4vw, 20px); color: var(--muted); max-width: 576px; }
+  .hero-actions { margin-top: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .hero-note { border-left: 1px solid rgba(224,180,90,.4); padding-left: 16px; font-size: 14px; color: var(--muted); }
+  .hero-note span { color: var(--fg); }
+
+  /* Quiz */
+  .quiz-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,.3); }
+  .progress-head { display: flex; justify-content: space-between; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 12px; }
+  .progress { height: 6px; background: var(--secondary); border-radius: 999px; overflow: hidden; margin-bottom: 32px; }
+  .progress div { height: 100%; width: 0; background: var(--gold); border-radius: 999px; transition: width .5s ease-out; }
+  fieldset { border: 0; animation: right .5s ease both; }
+  legend { font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 3vw, 24px); line-height: 1.35; margin-bottom: 24px; text-wrap: balance; }
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .option { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; transition: all .2s; }
+  .option:hover { border-color: rgba(224,180,90,.6); background: rgba(35,43,68,.6); }
+  .option:has(input:checked) { border-color: var(--gold); background: rgba(224,180,90,.1); }
+  .option:has(input:focus-visible) { outline: 2px solid var(--gold); }
+  .radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid rgba(191,195,204,.5); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); transform: scale(0); transition: transform .2s; }
+  .option:has(input:checked) .radio { border-color: var(--gold); }
+  .option:has(input:checked) .radio::after { transform: scale(1); }
+  .quiz-next { margin-top: 32px; }
+  .done { text-align: center; padding: 24px 0; animation: zoom .5s ease both; }
+  .done-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(224,180,90,.15); color: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .result { max-width: 768px; margin: 96px auto 0; scroll-margin-top: 32px; animation: up .7s ease both; }
+  .result-text { max-width: 640px; margin: 32px auto 0; text-align: center; font-size: 18px; color: var(--muted); display: flex; flex-direction: column; gap: 16px; }
+  .result-box { position: relative; margin-top: 48px; padding: 32px; text-align: center; border: 1px solid rgba(224,180,90,.4); border-radius: 16px; background: linear-gradient(135deg, var(--card), var(--secondary)); overflow: hidden; }
+  .result-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+  .result-box p { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 3.4vw, 30px); line-height: 1.35; margin-bottom: 32px; }
+
+  /* Ebook */
+  .ebook-grid { display: grid; gap: 48px; align-items: center; }
+  .ebook-grid h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(38px, 6vw, 60px); line-height: 1.1; }
+  .ebook-cover { position: relative; }
+  .ebook-cover::before { content: ''; position: absolute; inset: 32px; z-index: -1; background: rgba(224,180,90,.2); border-radius: 50%; filter: blur(60px); }
+  .ebook-cover img { border-radius: 16px; width: 100%; }
+
+  .grid { display: grid; gap: 16px; margin-top: 56px; }
+  .tile { height: 100%; border: 1px solid var(--border); border-radius: 16px; padding: 24px; background: rgba(20,26,46,.6); transition: transform .3s, border-color .3s; }
+  .tile:hover { transform: translateY(-4px); border-color: rgba(224,180,90,.5); }
+  .tile-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(224,180,90,.1); color: var(--gold); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .chapter { background: var(--card); }
+  .chapter .num { font-family: var(--serif); font-weight: 600; font-size: 48px; color: rgba(224,180,90,.25); line-height: 1; }
+  .chapter .lbl { margin-top: 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); }
+  .chapter h3 { margin-top: 8px; font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.35; }
+  .bonus { display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid rgba(224,180,90,.2); border-radius: 16px; background: linear-gradient(135deg, var(--bg), var(--card)); height: 100%; transition: border-color .3s; }
+  .bonus:hover { border-color: rgba(224,180,90,.6); }
+  .bonus-icon { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(224,180,90,.4); color: var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .bonus small { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); }
+  .bonus b { font-weight: 500; line-height: 1.35; }
+
+  /* Testimonials */
+  .testi { display: flex; flex-direction: column; height: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+  .testi blockquote { flex: 1; margin-top: 16px; font-family: var(--serif); font-size: 18px; line-height: 1.6; }
+  .testi figcaption { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(224,180,90,.15); color: var(--gold); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .who { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+  .stars { display: flex; gap: 2px; color: var(--gold); }
+  .stars svg { width: 16px; height: 16px; fill: currentColor; stroke: none; }
+
+  /* Offer */
+  .offer { position: relative; max-width: 576px; margin: 0 auto; text-align: center; background: var(--bg); border: 2px solid rgba(224,180,90,.6); border-radius: 24px; padding: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(224,180,90,.1); }
+  .offer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gold); }
+  .badge { display: inline-block; padding: 6px 16px; border-radius: 999px; background: rgba(224,180,90,.15); color: var(--gold); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; }
+  .price { margin-top: 4px; display: flex; justify-content: center; align-items: flex-start; gap: 4px; font-family: var(--serif); font-weight: 600; color: var(--gold); }
+  .price small { font-size: 24px; margin-top: 12px; }
+  .price span { font-size: clamp(72px, 14vw, 96px); line-height: 1.1; }
+  .included { max-width: 384px; margin: 32px auto 0; text-align: left; display: flex; flex-direction: column; gap: 12px; }
+  .included li { display: flex; align-items: center; gap: 12px; }
+  .check { width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: var(--bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check svg { width: 16px; height: 16px; }
+
+  .guarantee { max-width: 768px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+  .shield { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .shield svg { width: 40px; height: 40px; }
+
+  .final { position: relative; overflow: hidden; isolation: isolate; }
+  .final::before { content: ''; position: absolute; left: 50%; top: 50%; width: 576px; height: 576px; transform: translate(-50%,-50%); border-radius: 50%; background: rgba(224,180,90,.1); filter: blur(64px); z-index: -1; }
+
+  footer { border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; font-size: 14px; color: var(--muted); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @keyframes up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @keyframes right { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+  @keyframes zoom { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: none; } }
+
+  @media (min-width: 640px) {
+    .hero-actions { flex-direction: row; align-items: center; }
+    .grid.c2 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 768px) {
+    section { padding: 128px 0; }
+    .hero { align-items: center; }
+    .hero::before { background: linear-gradient(to right, var(--bg), rgba(20,26,46,.85), transparent); }
+    .hero .container { padding-top: 96px; padding-bottom: 96px; }
+    .quiz-card { padding: 40px; }
+    .result-box, .offer { padding: 48px; }
+    .ebook-grid { grid-template-columns: 1fr 1fr; }
+    .grid.t3 { grid-template-columns: repeat(3, 1fr); }
+    .guarantee { flex-direction: row; text-align: left; padding: 40px; }
+  }
+  @media (min-width: 1024px) {
+    .grid.c4 { grid-template-columns: repeat(4, 1fr); }
+    .grid.c3 { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M11.5 2.3a.53.53 0 0 1 .95 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .29-.9l5.17-.76a2.12 2.12 0 0 0 1.6-1.16z"/></symbol>
+  <symbol id="quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+  <symbol id="sparkle" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2zM18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+  <symbol id="scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1ZM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1ZM7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+  <symbol id="brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v13"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="calendar" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M9 16l2 2 4-4"/></symbol>
+  <symbol id="flask" viewBox="0 0 24 24"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2M8.5 2h7M7 16h10"/></symbol>
+  <symbol id="dumbbell" viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6M18.66 21.51a2 2 0 1 1-2.83-2.83l-1.77 1.77a2 2 0 1 1-2.83-2.83l6.37-6.37a2 2 0 1 1 2.83 2.83l-1.77 1.77a2 2 0 1 1 2.83 2.83zM21.5 21.5l-1.4-1.4M3.9 3.9 2.5 2.5M6.4 12.77a2 2 0 1 1-2.83-2.83l1.77-1.77a2 2 0 1 1-2.83-2.83l2.83-2.83a2 2 0 1 1 2.83 2.83l1.77-1.77a2 2 0 1 1 2.83 2.83z"/></symbol>
+  <symbol id="clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 14l2 2 4-4"/></symbol>
+  <symbol id="warn" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22ZM12 8v4M12 16h.01"/></symbol>
+</svg>
+
+<header class="hero">
+  <img class="hero-img" src="/images/hero.png" alt="" fetchpriority="high">
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow">Diagnóstico emocional</p>
+      <h1>Ela afastou-se <span class="italic gold">sem explicação?</span></h1>
+      <p class="sub">Descobre em apenas 2 minutos se estás a cometer erros que afastam mulheres sem perceber.</p>
+      <div class="hero-actions">
+        <a href="#diagnostico" class="btn">FAZER O DIAGNÓSTICO GRATUITO <svg class="i"><use href="#arrow-down"/></svg></a>
+        <p class="hero-note">Mais de uma simples leitura.<br><span>Uma experiência de autoconhecimento.</span></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Quiz -->
+  <section id="diagnostico" aria-labelledby="quiz-title" style="scroll-margin-top:32px">
+    <div class="container narrow">
+      <div class="center" style="margin-bottom:40px">
+        <p class="eyebrow">Diagnóstico gratuito</p>
+        <h2 id="quiz-title" class="title">Responde com honestidade</h2>
+      </div>
+      <div class="quiz-card">
+        <div class="progress-head"><span id="q-label">Pergunta 1 de 3</span><span class="gold" id="q-pct">0%</span></div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso do diagnóstico" id="q-bar"><div></div></div>
+        <div id="q-body"></div>
+      </div>
+    </div>
+
+    <div class="container result" id="result" hidden aria-live="polite">
+      <div class="center">
+        <p class="eyebrow"><svg class="i" style="width:16px;height:16px"><use href="#sparkle"/></svg> Análise personalizada</p>
+        <h2 class="title">Resultado da tua análise</h2>
+      </div>
+      <div class="result-text">
+        <p>Com base nas tuas respostas, existem sinais de comportamentos emocionais que podem estar a afetar as tuas relações sem que te apercebas.</p>
+        <p style="color:var(--fg)">Mas existe uma boa notícia.</p>
+        <p>Esses padrões podem ser identificados, compreendidos e corrigidos.</p>
+        <p>Foi exatamente por isso que criámos este guia.</p>
+      </div>
+      <div class="result-box">
+        <p>O problema não é quem ela é.<br><span class="gold">O problema é o que tu ainda não consegues ver.</span></p>
+        <a href="#ebook" class="btn">QUERO DESCOBRIR MAIS <svg class="i"><use href="#arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ebook -->
+  <section id="ebook" class="bt">
+    <div class="container ebook-grid">
+      <div class="reveal">
+        <p class="eyebrow">O guia</p>
+        <h2>Porque ela se afasta?</h2>
+        <p class="serif italic muted" style="font-weight:400;font-size:19px;margin-top:12px">Os erros que os homens cometem sem perceber e como evitá-los</p>
+        <p class="muted" style="font-size:18px;margin-top:24px">O guia que revela os <span style="color:var(--fg)">erros invisíveis que destroem a atração</span> e ensina como desenvolver maturidade emocional.</p>
+      </div>
+      <div class="ebook-cover reveal">
+        <img src="/images/ebook-cover.png" alt="Capa do ebook Porque Ela Se Afasta?" width="1408" height="768" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="alt">
+    <div class="container">
+      <div class="center reveal"><p class="eyebrow">Benefícios</p><h2 class="title">O que vais aprender</h2></div>
+      <ul class="grid c2 c4">
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#eye"/></svg></span><p>Como identificar sinais de afastamento.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#heart"/></svg></span><p>Porque a carência destrói a atração.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#trophy"/></svg></span><p>Como desenvolver autoconfiança.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#chat"/></svg></span><p>Os erros de comunicação mais comuns.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#scale"/></svg></span><p>Como recuperar o equilíbrio emocional.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#shield"/></svg></span><p>Como construir relações saudáveis.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#user"/></svg></span><p>Como deixar de depender da validação dos outros.</p></div></li>
+        <li class="reveal"><div class="tile"><span class="tile-icon"><svg class="i" style="width:24px;height:24px"><use href="#brain"/></svg></span><p>Como compreender melhor o comportamento feminino.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Capítulos -->
+  <section>
+    <div class="container">
+      <div class="center reveal">
+        <p class="eyebrow">Conteúdo</p>
+        <h2 class="title">Dentro do ebook</h2>
+        <p class="lead">Oito capítulos diretos ao ponto para compreenderes os teus padrões e mudares a forma como te relacionas.</p>
+      </div>
+      <ol class="grid c2 c4" id="chapters"></ol>
+    </div>
+  </section>
+
+  <!-- Bónus -->
+  <section class="alt">
+    <div class="container" style="max-width:1024px">
+      <div class="center reveal"><p class="eyebrow">Incluído</p><h2 class="title">Bónus exclusivos</h2></div>
+      <ul class="grid c2 c3">
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#flask"/></svg></span><div><small>Bónus 1</small><b>Testes Psicológicos</b></div></div></li>
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#calendar"/></svg></span><div><small>Bónus 2</small><b>Plano de Transformação de 30 Dias</b></div></div></li>
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#dumbbell"/></svg></span><div><small>Bónus 3</small><b>Exercícios Práticos</b></div></div></li>
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#target"/></svg></span><div><small>Bónus 4</small><b>Desafios Semanais</b></div></div></li>
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#clipboard"/></svg></span><div><small>Bónus 5</small><b>Checklist de Maturidade Emocional</b></div></div></li>
+        <li class="reveal"><div class="bonus"><span class="bonus-icon"><svg class="i"><use href="#warn"/></svg></span><div><small>Bónus 6</small><b>10 Frases Que Nunca Deves Usar Numa Discussão</b></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section>
+    <div class="container">
+      <div class="center reveal"><p class="eyebrow">Depoimentos</p><h2 class="title">O que dizem os leitores</h2></div>
+      <ul class="grid t3" id="testimonials"></ul>
+    </div>
+  </section>
+
+  <!-- Oferta -->
+  <section id="oferta" class="alt" style="scroll-margin-top:32px">
+    <div class="container">
+      <div class="offer reveal">
+        <span class="badge">Lançamento</span>
+        <h2 class="title" style="margin-top:24px;font-size:clamp(28px,4.5vw,36px)">Oferta especial de lançamento</h2>
+        <div style="margin-top:32px">
+          <p class="muted">De <s>49,99 US$</s></p>
+          <p class="price"><small>US$</small><span>14,90</span></p>
+          <p style="font-size:14px;font-weight:500;margin-top:8px">Poupas 70% hoje</p>
+        </div>
+        <ul class="included">
+          <li><span class="check"><svg class="i"><use href="#check"/></svg></span>Acesso imediato</li>
+          <li><span class="check"><svg class="i"><use href="#check"/></svg></span>Download digital</li>
+          <li><span class="check"><svg class="i"><use href="#check"/></svg></span>Leitura em telemóvel, computador e tablet</li>
+          <li><span class="check"><svg class="i"><use href="#check"/></svg></span>Atualizações futuras</li>
+        </ul>
+        <a href="https://pay.hotmart.com/E107993349P" class="btn full" style="margin-top:40px">QUERO O MEU EBOOK AGORA <svg class="i"><use href="#arrow-right"/></svg></a>
+        <p class="muted" style="font-size:12px;margin-top:16px">Pagamento 100% seguro processado pela Hotmart</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Garantia -->
+  <section style="padding:96px 0">
+    <div class="container">
+      <div class="guarantee reveal">
+        <span class="shield"><svg class="i"><use href="#shield"/></svg></span>
+        <div>
+          <h2 class="serif" style="font-size:clamp(24px,3.4vw,30px)">Compra sem risco</h2>
+          <p class="muted" style="margin-top:12px">Se o conteúdo não corresponder às tuas expectativas, poderás solicitar suporte através dos canais disponibilizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="final bt">
+    <div class="container center reveal" style="max-width:768px">
+      <h2 class="title" style="font-size:clamp(30px,5.5vw,48px)">Estás pronto para descobrir o que <span class="italic gold">realmente</span> afasta uma mulher?</h2>
+      <p class="lead" style="margin-top:24px">A diferença entre continuar perdido e finalmente compreender os teus padrões emocionais pode começar hoje.</p>
+      <div style="margin-top:40px">
+        <a href="https://pay.hotmart.com/E107993349P" class="btn xl">QUERO O MEU EBOOK AGORA <svg class="i"><use href="#arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Porque Ela Se Afasta? Todos os direitos reservados.</p>
+</footer>
+
+<script>
+(function () {
+  var QUESTIONS = [
+    { q: 'Qual destas situações melhor descreve o teu caso?', o: ['Ela afastou-se de repente.', 'Terminámos recentemente.', 'Ainda estamos juntos mas ela parece distante.', 'Nunca percebo porque perco o interesse dela.'], cta: 'CONTINUAR' },
+    { q: 'Quando percebes que ela está distante, qual costuma ser a tua reação?', o: ['Envio mais mensagens.', 'Peço explicações.', 'Fico com ciúmes.', 'Tento ignorar a situação.'], cta: 'CONTINUAR' },
+    { q: 'Com que frequência ela ocupa os teus pensamentos?', o: ['Poucas vezes.', 'Algumas vezes ao dia.', 'Muitas vezes ao dia.', 'Quase constantemente.'], cta: 'VER RESULTADO' }
+  ];
+  var step = 0, selected = null;
+  var body = document.getElementById('q-body');
+  var bar = document.getElementById('q-bar');
+  var label = document.getElementById('q-label');
+  var pct = document.getElementById('q-pct');
+
+  function setProgress(value) {
+    var v = Math.round(value);
+    bar.firstElementChild.style.width = v + '%';
+    bar.setAttribute('aria-valuenow', v);
+    pct.textContent = v + '%';
+  }
+
+  function render() {
+    var cur = QUESTIONS[step];
+    selected = null;
+    label.textContent = 'Pergunta ' + (step + 1) + ' de ' + QUESTIONS.length;
+    setProgress((step / QUESTIONS.length) * 100);
+    var html = '<fieldset><legend>' + cur.q + '</legend><div class="options">';
+    cur.o.forEach(function (opt, i) {
+      html += '<label class="option"><input type="radio" class="sr-only" name="q' + step + '" value="' + i + '"><span class="radio" aria-hidden="true"></span><span>' + opt + '</span></label>';
+    });
+    html += '</div><button type="button" class="btn full quiz-next" disabled>' + cur.cta + ' <svg class="i"><use href="#arrow-right"/></svg></button></fieldset>';
+    body.innerHTML = html;
+    var btn = body.querySelector('button');
+    body.querySelectorAll('input').forEach(function (input) {
+      input.addEventListener('change', function () {
+        selected = Number(input.value);
+        btn.disabled = false;
+        setProgress((step / QUESTIONS.length) * 100 + 100 / QUESTIONS.length / 2);
+      });
+    });
+    btn.addEventListener('click', next);
+  }
+
+  function next() {
+    if (selected === null) return;
+    if (step < QUESTIONS.length - 1) { step++; render(); return; }
+    label.textContent = 'Concluído';
+    setProgress(100);
+    body.innerHTML = '<div class="done"><span class="done-icon"><svg class="i" style="width:28px;height:28px"><use href="#check"/></svg></span><p class="serif" style="font-size:24px">Diagnóstico concluído</p><p class="muted" style="margin-top:8px">Vê abaixo o resultado da tua análise.</p></div>';
+    var result = document.getElementById('result');
+    result.hidden = false;
+    requestAnimationFrame(function () { result.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  }
+
+  render();
+
+  var CHAPTERS = ['O Erro da Carência Emocional', 'Quando o Homem Perde a Própria Identidade', 'Ciúme, Controlo e Insegurança', 'O Perigo da Rotina', 'Erros de Comunicação', 'Sinais de Perda de Interesse', 'O Que Fazer Quando Ela Se Afasta', 'Como Construir Uma Relação Saudável'];
+  document.getElementById('chapters').innerHTML = CHAPTERS.map(function (t, i) {
+    var n = String(i + 1).padStart(2, '0');
+    return '<li class="reveal"><article class="tile chapter"><span class="num" aria-hidden="true">' + n + '</span><p class="lbl">Capítulo ' + (i + 1) + '</p><h3>' + t + '</h3></article></li>';
+  }).join('');
+
+  var TESTI = [
+    ['Jonathan Dias', 'Este ebook ajudou-me a perceber erros que estava a cometer há anos.'],
+    ['Rosa dos Santos', 'Pela primeira vez senti que alguém explicava relacionamentos de forma simples.'],
+    ['Pedro Ferreira', 'Muito mais útil do que vídeos aleatórios das redes sociais.']
+  ];
+  var star = '<svg><use href="#star"/></svg>';
+  document.getElementById('testimonials').innerHTML = TESTI.map(function (t) {
+    var initials = t[0].split(' ').map(function (w) { return w[0]; }).slice(0, 2).join('');
+    return '<li class="reveal"><figure class="testi"><svg class="i gold" style="width:32px;height:32px;opacity:.4"><use href="#quote"/></svg><blockquote>"' + t[1] + '"</blockquote><figcaption><span class="who"><span class="avatar" aria-hidden="true">' + initials + '</span>' + t[0] + '</span><span class="stars" aria-label="5 de 5 estrelas">' + star + star + star + star + star + '</span></figcaption></figure></li>';
+  }).join('');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('visible'); });
+  }
+})();
+</script>
+</body>
+</html>
